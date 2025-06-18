@@ -1,6 +1,9 @@
 [submodule "teebay-api"]
-	path = teebay-api
-	url = https://github.com/ihashib/teebay-api.git
+  path = teebay-api
+  url  = https://github.com/ihashib/teebay-api.git
+  branch = master
+
 [submodule "teebay-ui"]
-	path = teebay-ui
-	url = https://github.com/ihashib/teebay-ui.git
+  path = teebay-ui
+  url  = https://github.com/ihashib/teebay-ui.git
+  branch = master
