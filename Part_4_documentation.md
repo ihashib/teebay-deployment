@@ -85,17 +85,17 @@ In the backend, a seprate product category table is maintained with reference to
 ### Add Product:
 The user fills out the product details, including title, category, description, price, and rental information. Each field has null checks and corresponding error message in the frontend. After validation, the data is submitted to the backend through GraphQl mutation.
 
-The backend receives the productDto and checks if the owner of the product exists. Afterward, using mapstruct dto is converted to entity to be saved in the DB. Try catch and graceful exception handling is used when saving to db via repository.
+The backend receives the productDto and checks if the owner of the product exists. The userId is taken from the authentication interceptor to take the userId from request header. Afterward, using mapstruct dto is converted to entity to be saved in the DB. Try catch and graceful exception handling is used when saving to db via repository.
 
 ### Edit Product
 Users can edit their own product details. The updated information is sent to the backend, which updates the database. The Apollo cache is updated to reflect the changes immediately in the frontend.
 
-The backend checks if the product exists, verifies the owner if they exist. Beancopy is used to copy the updated product data to the existing products. Afterwards, the updated existing product is saved gracefull with try catch and excpetion handling.
+The backend checks if the product exists, verifies the owner if they exist. The userId is taken from the authentication interceptor to take the userId from request header. Beancopy is used to copy the updated product data to the existing products. Afterwards, the updated existing product is saved gracefull with try catch and excpetion handling.
 
 ### Delete Product:
 When a user deletes a product, the backend removes it from the database, and Apollo cache is cleared to ensure the ui is updated.
 
-The backend has product and owner data existance checks. This also has try catch and graceful exception handling before delteing via repository.
+The backend has product and owner data existance checks with same interceptor to catch header auth. This also has try catch and graceful exception handling before delteing via repository.
 
 ## Part 3: Rent and Buy/Sell Products
 ### Product Listing:
