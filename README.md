@@ -25,7 +25,7 @@ Each service lives in its own Git repo; this repo holds:
 Clone the parent repo along with frontend and backend:
 
 ```bash
-git clone --recursive https://github.com/ihashib/deployment-repo.git
+git clone --recursive https://github.com/ihashib/teebay-deployment.git
 cd deployment-repo
 ```
 
